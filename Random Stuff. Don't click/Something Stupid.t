@@ -1,14 +1,14 @@
 var random : int
-var austin : string
+var answer : string
 
 put "Enter 'done' when you are finished."
 
 loop
     randint (random, 1, 10)
     put "Do you want to suicide? " ..
-    get austin
-    exit when austin = "done" or austin = "Done"
-    if austin = "yes" or austin = "Yes" or austin = "no" or austin = "No" then
+    get answer
+    exit when answer = "done" or answer = "Done"
+    if answer = "yes" or answer = "Yes" or answer = "no" or answer = "No" then
 	if random = 3 then
 	    put "YOUR WISH HAS BEEN GRANTED!"
 	else
