@@ -1,40 +1,22 @@
-procedure kindOfTriangle (x : real, y : real, z : real)
-    if x = y and y = z then
-	put "This triangle is equilateral."
-    elsif x = y or x = z or y = z then
-	put "This triangle is isosceles."
+procedure triangle_type (angle1 : real, angle2 : real, angle3 : real)
+    if angle1 + angle2 + angle3 not= 180 then
+        put "The angles must add up to 180 degrees."
     else
-	put "This triangle is scalene."
+        if angle1 = angle2 and angle2 = angle3 then
+            put "You have an equilateral triangle."
+        elsif angle1 not= angle2 and angle2 not= angle3 then
+            put "You have a scalene triangle."
+        else
+            put "You have an isosceles triangle."
+        end if
     end if
-end kindOfTriangle
+end triangle_type
 
-var x, y, z : string
-var number1, number2, number3 : real
+var ang1, ang2, ang3 : real
 
-loop
-    loop
-	put "Please enter the first angle of your triangle: "
-	get x
-	exit when strrealok (x) and strreal (x) > 0
-	put "Invalid answer."
-    end loop
-    number1 := strreal (x)
-    loop
-	put "Please enter the second angle of your triangle: "
-	get y
+put "Please enter your three angles of your triangle: " ..
+get ang1, ang2, ang3
 
-	exit when strrealok (y) and strreal (y) > 0
-	put "Invalid answer."
-    end loop
-    number2 := strreal (y)
-    loop
-	put "Please enter the third angle of your triangle: "
-	get z
-	exit when strrealok (z) and strreal (z) > 0
-    end loop
-    number3 := strreal (z)
-    exit when number1 + number2 + number3 = 180
-    put "Your angles must add up to 180!"
-end loop
+triangle_type (ang1, ang2, ang3)
 
-kindOfTriangle (number1, number2, number3)
+
