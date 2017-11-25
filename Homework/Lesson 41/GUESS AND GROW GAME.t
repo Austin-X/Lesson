@@ -119,7 +119,7 @@ textField2 := GUI.CreateTextField (255, 140, 170, "", setTextField)
 text2FieldLabel := GUI.CreateLabel (255, 140 + GUI.GetHeight (textField2), "Output:")
 backButton := GUI.CreateButton (400, 10, 80, "Back", back)
 GrowButton := GUI.CreateButton (10, 10, 80, "Growing Button.", growGame)
-quitButton := GUI.CreateButton (417, 270, 80, "Quit", GUI.Quit)
+quitButton := GUI.CreateButton (407, 270, 80, "Quit", GUI.Quit)
 
 home
 loop
