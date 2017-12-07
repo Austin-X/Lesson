@@ -14,7 +14,18 @@ var textFieldLabel : int
 var textFieldLabel2 : int
 
 procedure echoTextField (contents : string)
-    GUI.SetText (textField, contents)
+    var new_word : string := ""
+    var number : int
+    word := GUI.GetText (textField)
+    for i : 1 .. length (word)
+	if word (i) >= "a" and word (i) <= "z" then
+	    number := ord (word (i)) - ord ("a") + ord ("A")
+	    new_word += chr (number)
+	else
+	    new_word += word (i)
+	end if
+    end for
+    GUI.SetText (textField2, new_word)
 end echoTextField
 
 procedure setTextField (contents : string)
