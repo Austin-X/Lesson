@@ -16,13 +16,12 @@ var textFieldLabel2 : int
 procedure echoTextField (contents : string)
     var new_word : string := ""
     var number : int
-    word := GUI.GetText (textField)
-    for i : 1 .. length (word)
-	if word (i) >= "a" and word (i) <= "z" then
-	    number := ord (word (i)) - ord ("a") + ord ("A")
+    for i : 1 .. length (contents)
+	if contents (i) >= "a" and contents (i) <= "z" then
+	    number := ord (contents (i)) - ord ("a") + ord ("A")
 	    new_word += chr (number)
 	else
-	    new_word += word (i)
+	    new_word += contents (i)
 	end if
     end for
     GUI.SetText (textField2, new_word)
